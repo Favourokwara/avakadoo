@@ -21,7 +21,7 @@ export default function Home() {
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-16">
           {/* Header with "Doctor's Orders" and icon */}
           <div className="flex items-center">
-            <div>
+                        <div>
               <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] ml-4">
                 Doctor's Orders
               </h1>
@@ -82,9 +82,16 @@ export default function Home() {
               </div>
               <button
                 type="submit"
-                className="bg-white/10 text-white px-4 py-2 rounded-md hover:bg-[#2e026d]"
+                className="bg-white/10 text-white px-4 py-2 rounded-md hover:bg-[#2e026d] mr-2"
               >
                 Login as {selectedTab}
+              </button>
+              {/* "Forgot Password" button */}
+              <button
+                type="button"
+                className="bg-white/10 px-2 py-1 rounded-md hover:bg-[#2e026d] mr-2"
+              >
+                Forgot Password
               </button>
             </form>
           </div>
