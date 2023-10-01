@@ -2,11 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react"; // Import useState
 
-import { api } from "~/utils/api";
-
 export default function Home() {
-  const hello = api.example.hello.useQuery({ text: "from tRPC" });
-
   // Use state to manage the selected tab
   const [selectedTab, setSelectedTab] = useState("Doctor");
 
@@ -21,7 +17,7 @@ export default function Home() {
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-4 px-4 py-16">
           {/* Header with "Doctor's Orders" and icon */}
           <div className="flex items-center">
-                        <div>
+            <div>
               <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem] ml-4">
                 Doctor's Orders
               </h1>
@@ -80,12 +76,14 @@ export default function Home() {
                   className="mt-1 p-2 w-full text-black rounded-md border border-gray-300"
                 />
               </div>
-              <button
-                type="submit"
-                className="bg-white/10 text-white px-4 py-2 rounded-md hover:bg-[#2e026d] mr-2"
-              >
-                Login as {selectedTab}
-              </button>
+              <Link href="/dashboard">
+                <button
+                  type="submit"
+                  className="bg-white/10 text-white px-4 py-2 rounded-md hover:bg-[#2e026d] mr-2"
+                >
+                  Login as {selectedTab}
+                </button>
+              </Link>
               {/* "Forgot Password" button */}
               <button
                 type="button"
